@@ -7,24 +7,36 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Node n1 = new Node(1);
-            Node n2 = new Node(2);
-            Node n3 = new Node(3);
-            Node n4 = new Node(4);
-            Node n5 = new Node(5);
-            Node n6 = new Node(6);
-            Node n7 = new Node(7);
+            Person abuelaM= new Person("Abuela Materna", 70);
+            Person abueloM= new Person("Abuelo Materno",80);
+            Person madre= new Person("Madre", 45);
+            Person padre=new Person("Padre",50);
+            Person abueloP=new Person("Abuelo Paterno", 60);
+            Person abuelaP= new Person("Abuela Paterna",57);
+            Person hijo1= new Person("Hijo 1", 20);
+            Person hijo2=new Person("Hijo 2", 17);
 
-            n1.AddChildren(n2);
-            n1.AddChildren(n3);
+            Node abuela1=new Node(abuelaM);
+            Node abuelo1=new Node(abueloM);
+            Node abuela2=new Node(abuelaP);
+            Node abuelo2=new Node(abueloP);
+            Node Madre=new Node (madre);
+            Node Padre=new Node (padre);
+            Node Hijo1=new Node (hijo1);
+            Node Hijo2=new Node (hijo2);
+            
+            abuela1.AddChildren(Madre);
+            abuelo1.AddChildren(Madre);
+            abuela2.AddChildren(Padre);
+            abuelo2.AddChildren(Padre);
+            Madre.AddChildren(Hijo1);
+            Padre.AddChildren(Hijo1);
+            Madre.AddChildren(Hijo2);
+            Padre.AddChildren(Hijo2);
 
-            n2.AddChildren(n4);
-            n2.AddChildren(n5);
-
-            n3.AddChildren(n6);
-            n3.AddChildren(n7);
-
-            // visitar el árbol aquí
+            // Ejemplo de cómo acceder a la información del árbol
+            Console.WriteLine("Nombre del abuelo materno: " + abuela1.Children[0].Person.Name);
+            Console.WriteLine("Nombre de la madre: " + abuelo1.Children[0].Children[0].Person.Name);
         }
     }
 }
