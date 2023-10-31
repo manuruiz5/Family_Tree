@@ -11,7 +11,7 @@ namespace Library
         {
             get 
             {
-                return this.ContenBuilder.ToString();
+                return this.ContentBuilder.ToString();
             }
         }
 
