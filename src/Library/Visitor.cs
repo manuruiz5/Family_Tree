@@ -15,7 +15,7 @@ namespace Library
             }
         }
 
-        protected StringBuilder ContentBuilder;
+        protected StringBuilder ContentBuilder { get; } = new StringBuilder();
         public abstract void Visit(Person person);
         public abstract void Visit(Node node);
     }

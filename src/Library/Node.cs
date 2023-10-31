@@ -32,5 +32,10 @@ namespace Library
         {
             this.children.Add(n);
         }
+
+        public void Accept(Visitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }

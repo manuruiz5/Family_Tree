@@ -15,5 +15,10 @@ namespace Library
             this.Age = Age;
         }
 
+        public void Accept(Visitor visitor)
+        {
+            visitor.Visit(this);
+        }
+        
     }
 }
