@@ -2,17 +2,20 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System;
 
-public abstract class Visitor
+namespace Library
 {
-    public string Content
+    public abstract class Visitor
     {
-        get 
+        public string Content
         {
-            return this.ContenBuilder.ToString()
+            get 
+            {
+                return this.ContenBuilder.ToString()
+            }
         }
-    }
 
-    protected StringBuilder ContentBuilder
-    public abstract void Visit(Person person);
-    public abstract void Visit(Node node);
+        protected StringBuilder ContentBuilder;
+        public abstract void Visit(Person person);
+        public abstract void Visit(Node node);
+    }
 }
