@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System;
+using System.Text;
 
 namespace Library
 {
@@ -10,7 +11,7 @@ namespace Library
         {
             get 
             {
-                return this.ContenBuilder.ToString()
+                return this.ContenBuilder.ToString();
             }
         }
 
