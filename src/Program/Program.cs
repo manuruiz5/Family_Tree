@@ -7,45 +7,38 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            //Instancias de personas: 
-            Person abuelaM= new Person("Abuela Materna", 70);
-            Person abueloM= new Person("Abuelo Materno",80);
-            Person madre= new Person("Madre", 45);
-            Person padre=new Person("Padre",50);
-            Person abueloP=new Person("Abuelo Paterno", 60);
-            Person abuelaP= new Person("Abuela Paterna",57);
-            Person hijo1= new Person("Hijo 1", 20);
-            Person hijo2=new Person("Hijo 2", 17);
+            Node abuelaM= new Node(new Person("Abuela Materna",70));
+            Node abueloM=new Node(new Person("Abuelo Materno",80));
+            Node madre=new Node(new Person("Madre",45));
+            Node abuelaP=new Node(new Person("Abuela Paterna", 75));
+            Node abueloP =new Node(new Person("Abuelo Paterno", 85));
+            Node padre=new Node(new Person("Padre", 50));
+            Node hijo1=new Node(new Person("Hijo 1", 20));
+            Node hijo2=new Node(new Person("Hijo 2", 17));
 
-            //Instancias de nodos:
-            Node abuela1=new Node(abuelaM);
-            Node abuelo1=new Node(abueloM);
-            Node abuela2=new Node(abuelaP);
-            Node abuelo2=new Node(abueloP);
-            Node Madre=new Node (madre);
-            Node Padre=new Node (padre);
-            Node Hijo1=new Node (hijo1);
-            Node Hijo2=new Node (hijo2);
-            
-            //Crea los distintos nodos para el arbol genealogico :
-            abuela1.AddChildren(Madre);
-            abuelo1.AddChildren(Madre);
-            abuela2.AddChildren(Padre);
-            abuelo2.AddChildren(Padre);
-            Madre.AddChildren(Hijo1);
-            Padre.AddChildren(Hijo1);
-            Madre.AddChildren(Hijo2);
-            Padre.AddChildren(Hijo2);
+            Node familiaMaterna=new Node(null);
+            familiaMaterna.AddChildren(abuelaM);
+            familiaMaterna.AddChildren(abueloM);
+            familiaMaterna.AddChildren(madre);
+            Node familiaPaterna = new Node(null);
+            familiaPaterna.AddChildren(abuelaP);
+            familiaPaterna.AddChildren(abueloP);
+            familiaPaterna.AddChildren(padre);
+            Node familiaCompleta = new Node(null);
+            familiaCompleta.AddChildren(familiaMaterna);
+            familiaCompleta.AddChildren(familiaPaterna);
+            familiaCompleta.AddChildren(hijo1);
+            familiaCompleta.AddChildren(hijo2);
 
             //Acceder al arbol:
-            Console.WriteLine("Nombre del abuelo materno: " + abuelo1.Person.Name);
-            Console.WriteLine("Nombre de la madre: " + abuela1.Children[0].Person.Name);
+            Console.WriteLine("Nombre del abuelo materno: " + familiaMaterna.Children[1].Person.Name);
+            Console.WriteLine("Nombre de la madre: " + madre.Person.Name);
 
             //Uso del patrón Visitor:
             AgeVisitor ageVisitor= new AgeVisitor();
-            abuela1.Accept(ageVisitor); 
+            familiaCompleta.Accept(ageVisitor); 
             int totalAge=ageVisitor.Age;
-            Console.WriteLine($"suma de las edades de todos los integrantes de la familia {totalAge}");
+            Console.WriteLine($"suma de las edades de todos los integrantes de la familia: {totalAge}");
         }
     }
 }
