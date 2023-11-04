@@ -38,8 +38,8 @@ namespace Program
             Padre.AddChildren(Hijo2);
 
             //Acceder al arbol:
-            Console.WriteLine("Nombre del abuelo materno: " + abuela1.Children[0].Person.Name);
-            Console.WriteLine("Nombre de la madre: " + abuelo1.Children[0].Children[0].Person.Name);
+            Console.WriteLine("Nombre del abuelo materno: " + abuelo1.Person.Name);
+            Console.WriteLine("Nombre de la madre: " + abuela1.Children[0].Person.Name);
 
             //Uso del patrón Visitor:
             AgeVisitor ageVisitor= new AgeVisitor();
