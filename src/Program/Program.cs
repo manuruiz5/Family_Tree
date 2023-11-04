@@ -50,6 +50,11 @@ namespace Program
             Person child=childVisitor.Child;
             Console.WriteLine($"el hijo mas grande es {child.Name} y tiene {child.Age} años");
 
+            //Saber quien tiene el nombre mas largo:
+            NameVisitor nameVisitor=new NameVisitor();
+            familiaCompleta.Accept(nameVisitor);
+            string longestName=nameVisitor.LongestName;
+            Console.WriteLine($"El nombre mas largo es : {longestName}");
         }
     }
 } 
