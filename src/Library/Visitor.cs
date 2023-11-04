@@ -7,7 +7,7 @@ namespace Library
 {
     public abstract class Visitor
     {
-        public string Content
+        /*public string Content
         {
             get 
             {
@@ -15,7 +15,7 @@ namespace Library
             }
         }
 
-        protected StringBuilder ContentBuilder { get; } = new StringBuilder();
+        protected StringBuilder ContentBuilder { get; } = new StringBuilder();*/
         public abstract void Visit(Person person);
         public abstract void Visit(Node node);
     }
