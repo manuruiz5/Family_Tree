@@ -51,7 +51,7 @@ namespace Program
             NameVisitor nameVisitor=new NameVisitor();
             familiaCompleta.Accept(nameVisitor);
             string longestName=nameVisitor.LongestName;
-            Console.WriteLine($"El nombre mas largo es : {longestName}");
+            Console.WriteLine($"El nombre mas largo es: {longestName}");
         }
     }
 } 
