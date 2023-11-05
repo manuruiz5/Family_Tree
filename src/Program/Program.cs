@@ -41,12 +41,9 @@ namespace Program
             Console.WriteLine($"suma de las edades de todos los integrantes de la familia:  {totalAge}");//442
 
             //Saber cual es el hijo mas grande a traves del metodo visitor:
-            Node hojas = new Node(null);
-            hojas.AddChildren(hijo1);
-            hojas.AddChildren(hijo2);
 
             ChildVisitor childVisitor=new ChildVisitor();
-            hojas.Accept(childVisitor);
+            familiaCompleta.Accept(childVisitor);
             Person child=childVisitor.Child;
             Console.WriteLine($"el hijo mas grande es {child.Name} y tiene {child.Age} años");
 
