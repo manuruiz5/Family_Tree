@@ -43,8 +43,11 @@ namespace Program
             
             //Saber cual es el hijo mas grande a traves del metodo visitor:
 
+            Node hijos=new Node(null);
+            hijos.AddChildren(hijo1);
+            hijos.AddChildren(hijo2);
             ChildVisitor childVisitor=new ChildVisitor();
-            familiaCompleta.Accept(childVisitor);
+            hijos.Accept(childVisitor);
             Person child=childVisitor.Child;
             Console.WriteLine($"el hijo mas grande es {child.Name} y tiene {child.Age} años");
             familiaCompleta.ResetVisited();
@@ -53,7 +56,7 @@ namespace Program
             NameVisitor nameVisitor=new NameVisitor();
             familiaCompleta.Accept(nameVisitor);
             string longestName=nameVisitor.LongestName;
-            Console.WriteLine($"El nombre mas largo es: {longestName}");
+            Console.WriteLine("El nombre mas largo es:" + longestName);
         }
     }
 } 
