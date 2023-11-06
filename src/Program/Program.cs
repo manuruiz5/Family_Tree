@@ -39,14 +39,16 @@ namespace Program
             familiaCompleta.Accept(ageVisitor); 
             int totalAge=ageVisitor.Age;
             Console.WriteLine($"suma de las edades de todos los integrantes de la familia:  {totalAge}");//442
-
+            familiaCompleta.ResetVisited();
+            
             //Saber cual es el hijo mas grande a traves del metodo visitor:
 
             ChildVisitor childVisitor=new ChildVisitor();
             familiaCompleta.Accept(childVisitor);
             Person child=childVisitor.Child;
             Console.WriteLine($"el hijo mas grande es {child.Name} y tiene {child.Age} años");
-
+            familiaCompleta.ResetVisited();
+            
             //Saber quien tiene el nombre mas largo:
             NameVisitor nameVisitor=new NameVisitor();
             familiaCompleta.Accept(nameVisitor);

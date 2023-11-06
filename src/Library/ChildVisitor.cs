@@ -12,10 +12,21 @@ namespace Library
 
         public override void Visit(Node node)
         {
-            foreach (var child in node.Children)
+            // Si el nodo es una hoja, evalúa si es el hijo mayor.
+            if (node.Children.Count == 0 && node.Person != null)
             {
-                child.Accept(this);
+                Visit(node.Person);
             }
+            else
+            {
+                // En caso contrario, continúa la búsqueda en los hijos.
+                foreach (var child in node.Children)
+                {
+                    child.Accept(this);
+                }
+            }
+        }
+        
         }
         public override void Visit(Person person)
         {

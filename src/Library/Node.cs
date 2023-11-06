@@ -37,5 +37,18 @@ namespace Library
         {
             visitor.Visit(this);
         }
+
+        public void ResetVisited()
+        {
+            if (this.person != null)
+            {
+                this.person.ResetVisited();
+            }
+
+            foreach (var child in this.children)
+            {
+                child.ResetVisited();
+            }
+        }
     }
 }

@@ -21,6 +21,11 @@ namespace Library
         {
             visitor.Visit(this);
         }
+
+         public void ResetVisited()
+        {
+            this.Visited = false;
+        }
         
     }
 }

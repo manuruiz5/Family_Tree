@@ -14,10 +14,9 @@ namespace Library
         }
         public override void Visit(Node node) //Visita el nodo y suma la edad de la persona en ese nodo
         {
-            if (node.Person!=null && !node.Person.Visited)
+            if (node.Person!=null)
             {
                 Age+=node.Person.Age;
-                node.Person.Visited=true;
             }
             foreach (var child in node.Children)
             {
@@ -29,7 +28,6 @@ namespace Library
             if (!person.Visited)
             {
                 Age+=person.Age;
-                person.Visited=true;
             }
         }
     }
