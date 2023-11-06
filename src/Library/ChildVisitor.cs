@@ -27,7 +27,7 @@ namespace Library
             }
         }
         
-        }
+        
         public override void Visit(Person person)
         {
             if (person.Age > MaxAge)
