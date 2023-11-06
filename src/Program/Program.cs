@@ -10,7 +10,7 @@ namespace Program
             Node abuelaM= new Node(new Person("Abuela Materna",70));
             Node abueloM=new Node(new Person("Abuelo Materno",80));
             Node madre=new Node(new Person("Madre",45));
-            Node abuelaP=new Node(new Person("Abuela Paterna", 75));
+            Node abuelaP=new Node(new Person("Abuela Paterna(prueba para que aparezca como el nombre mas largo)", 75));
             Node abueloP =new Node(new Person("Abuelo Paterno", 85));
             Node padre=new Node(new Person("Padre", 50));
             Node hijo1=new Node(new Person("Hijo 1", 20));

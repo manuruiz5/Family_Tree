@@ -17,6 +17,10 @@ namespace Library
             {
                 child.Accept(this);
             }
+            if (node.Person!=null)
+            {
+                Visit(node.Person);
+            }
         }
         public override void Visit(Person person)
         {
